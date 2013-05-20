@@ -1,0 +1,20 @@
+\BOOKMARK [1][-]{section*.1}{Introduction}{}
+\BOOKMARK [1][-]{section*.2}{Monte Carlo integration and the Metropolis algorithm}{}
+\BOOKMARK [2][-]{section*.3}{Importance sampling in the Metropolis algorithm}{section*.2}
+\BOOKMARK [1][-]{section*.4}{Hamiltonian and ansatz for the wave function}{}
+\BOOKMARK [2][-]{section*.5}{Efficient computation of the wave function properties}{section*.4}
+\BOOKMARK [3][-]{section*.6}{Closed expressions for local energy}{section*.5}
+\BOOKMARK [2][-]{section*.7}{Hamiltonian and ansatz for molecules}{section*.4}
+\BOOKMARK [1][-]{section*.8}{Minimization algorithm for the energy}{}
+\BOOKMARK [2][-]{section*.9}{Expressions for the gradient}{section*.8}
+\BOOKMARK [1][-]{section*.10}{Statistical analysis using Blocking}{}
+\BOOKMARK [2][-]{section*.11}{Error as a function of the Metropolis time step}{section*.10}
+\BOOKMARK [1][-]{section*.12}{VMC calculations for He, Be, Ne, H2 and Be2}{}
+\BOOKMARK [2][-]{section*.13}{One-body densities}{section*.12}
+\BOOKMARK [1][-]{section*.14}{Conclutions and perspectives}{}
+\BOOKMARK [1][-]{section*.15}{Acknowledgments}{}
+\BOOKMARK [1][-]{section*.16}{Program code}{}
+\BOOKMARK [1][-]{section*.17}{Expressions for gradients and laplacians}{}
+\BOOKMARK [2][-]{section*.18}{Expressions for molecules}{section*.17}
+\BOOKMARK [1][-]{section*.19}{Fast computation of Slater determinants and Slater inverses}{}
+\BOOKMARK [1][-]{section*.20}{References}{}

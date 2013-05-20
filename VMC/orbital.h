@@ -5,12 +5,14 @@ class Orbital
 {
 public:
     Orbital(int n, int l, int m, int nD, int nP, double a);
-    double waveFunction(const vec &r);
-    vec gradient(const vec &r);
-    double laplace(const vec &r);
+    virtual double waveFunction(const vec &r);
+    virtual vec gradient(const vec &r);
+    virtual double laplace(const vec &r);
+    virtual double dPhidAlpha(const vec &r);
+    virtual double d2PhidAlpha2(const vec &r);
 
 
-private:
+protected:
     double alpha;
     int nDimensions;
     int nParticles;
@@ -20,5 +22,7 @@ private:
 
 
 };
+
+
 
 #endif // ORBITAL_H

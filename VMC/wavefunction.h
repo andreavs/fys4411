@@ -4,13 +4,14 @@ class SlaterDeterminant;
 
 // The wavefunction class takes in an atom and creates different trial
 // wave functions, some different properties such as gradient etc..
+#include <string>
 class Jastrow;
 using namespace arma;
 
 class WaveFunction
 {
 public:
-    WaveFunction(Atom *atom, bool incJas, bool incSelf, bool incPreComp, double a, double b);
+    WaveFunction(Atom *atom, bool incJas, bool incSelf, bool incPreComp, double a, double b, bool molecule=false);
     double waveFunction(const mat &r);
     double localEnergy(const mat &r);
     double preComputedLocalEnergy(const mat &r);
@@ -28,12 +29,24 @@ public:
     SlaterDeterminant *slater;
     Jastrow *jastrow;
 
+    double dPhidAlpha(const mat &r);
+    double dPhidBeta(const mat &r);
+    double d2PhidAlpha2(const mat &r);
+    double d2PhidBeta2(const mat &r);
+
+    void oneBodyDensity1D(std::string fn, double width, int nPoints, int nSamples, int dir=0);
+    void oneBodyDensity2D(std::string fn, double width, int nPoints, int nSamples, int dir=0);
+    void oneBodyDensity3D(std::string fn, double width, int nPoints, int nSamples);
+    Atom *myAtom;
+
+
+
 
 private:
     bool includeJastrow;
     bool includeSelfColoumb;
     bool includePreComputedLocalEnergy;
-    Atom *myAtom;
+
 
     //numerical differentiation things
     double h;
@@ -50,6 +63,8 @@ private:
 
     long idum;
     Random *rnd;
+    vec3 R;
+    bool molecule;
 
 
 };
