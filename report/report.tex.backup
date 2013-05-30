@@ -206,7 +206,7 @@ The Metropolis algorithm is easy to state in its simplest form. Suppose we have 
  \begin{equation}
   r \le {p(\Rvec') \over p(\Rvec)}
  \end{equation}
-where $r$ is a uniform random variable on the unit interval. A nice advantage of this is that we do not ever need to compute the norm of the function as we are only computing ratios between probabilites. There is no absolute answer for what is the optimal acceptance rate of movements, but a good rule of thumb is to choose the distribution $\Delta \Rvec$ is drawn from such that we get an acceptance rate of 50\%. 
+where $r$ is a uniform random variable on the unit interval. A nice advantage of this is that we do not ever need to compute the norm of the function as we are only computing ratios between probabilites. There is no absolute answer for what is the optimal acceptance rate of movements, but a good rule of thumb is to choose the distribution $\Delta \Rvec$ is drawn from such that we get an acceptance rate of 50\%. A derivation of the Metropolis Hastings algorithm is given in Appendix \ref{sec:metropolis}.
 \end{enumerate}
 \subsection{Importance sampling in the Metropolis algorithm}
  We want to keep the correlation between the Monte Carlo measurement low. An obvious way to do this would be to simply increase the step size, so that the wave function looks entirely different from one step to the next. The problem with this is that the acceptance rate would fall and we would keep selecting the same point over and over, which would give a high variance! This is where the acceptance rate ``rule of thumb'' of 0.5 comes from, but the optimal interval varies a lot from case to case.
@@ -409,11 +409,13 @@ for electron 1, and
 \end{equation}
 for electron 2. We then use sums and differences of the $|2,0,0 \rangle$ states for the four next electrons, and so on. These first 8 wavefunctions allows us to simulate the beryllium molecule as well. 
 
+It is interesting to investigate also the anti-symmetric state for $\text{H}_2$, and this result is included in section \ref{sec:res}. 
+
 
 \section{Minimization algorithm for the energy}
 \label{sec:minimize}
 
-Using brute force methods as described earlier is well and good for making energy plots such as in figures \ref{fig:1} and \ref{fig:3}. However, when we want to do a large scale simulation in order to calculate the energy with an as small error as possible, we would rather only use a large number of samples for the minimal energy. We need some method of finding the minimal energy. We will focus on {\it gradient methods}, iterative methods given by 
+Using brute force methods as described earlier is well and good for making energy plots such as in figures \ref{fig:addap1}. However, when we want to do a large scale simulation in order to calculate the energy with an as small error as possible, we would rather only use a large number of samples for the minimal energy. We need some method of finding the minimal energy. We will focus on {\it gradient methods}, iterative methods given by 
  \begin{equation}
   \alphavec_{k+1} = \alphavec_k + c_k\dvec_k
  \end{equation}
@@ -466,7 +468,7 @@ It turns out that all of these methods are quite dissappointing in our case, muc
  \begin{figure}
 \centering
 \includegraphics[width=7cm]{figures/addaptiveplot2.eps}
-\caption{in the energy space using the addaptive method detailed in section \ref{sec:minimize}}
+\caption{\label{fig:addap2} The figure shows the evolution of the parameter values of $\alpha$ and $\beta$ in the energy space using the addaptive method detailed in section \ref{sec:minimize}}
 \end{figure}
  
  \subsection{Expressions for the gradient}
@@ -507,7 +509,7 @@ Figure \ref{fig:block} shows an example of a blocking result (The data is taken 
 \end{figure}
 
 \subsection{Error as a function of the Metropolis time step}
-The parameter $\Delta t$ in the Metropolis algorithm sets the average trial step length. A too large step will give a small acceptance probability, while a too small step will move the walker an insignifigant amount. Both of these extremes lead to highly correlated data, and as such choosing the right $\Delta t$ is important to obtain good results. Figure \ref{fig:blockdt} shows the result of an experimental search for the right $\Delta t$. 
+The parameter $\Delta t$ in the Metropolis algorithm sets the average trial step length. A too large step will give a small acceptance probability, while a too small step will move the walker an insignifigant amount. Both of these extremes lead to highly correlated data, and as such choosing the right $\Delta t$ is important to obtain good results. Figure \ref{fig:blockdt} shows the result of an experimental search for the right $\Delta t$. All results in section \ref{sec:res} uses a time step of $\Delta t = 0.02$.
 
   \begin{figure}
 \centering
@@ -517,7 +519,23 @@ The parameter $\Delta t$ in the Metropolis algorithm sets the average trial step
 
 \section{VMC calculations for $\text{He}$, $\text{Be}$, $\text{Ne}$, $\text{H}_2$ and $\text{Be}_2$}
 \label{sec:res}
-The adaptive method described in section \ref{sec:minimize} was run for the different systems, after which a large scale Monte Carlo Simulation was run to calculate the optimal energies. The results for atoms are summarized in table \ref{tab:3}, and the results for molecules are summarized in table \ref{tab:4}.
+The adaptive method described in section \ref{sec:minimize} was run for the different systems, after which a large scale Monte Carlo Simulation was run to calculate the optimal energies. The results for atoms are summarized in table \ref{tab:3}, and the results for molecules are summarized in table \ref{tab:4}. We note that the anti-symmetric state of $\text{H}_2$ has much higher energy than the symmetric solution, and this is to be expected, as is gives the anti-bonded Hydrogen molecule. 
+
+For the electron-electron distances, we note that for atoms, these lower as the number of atoms increase. This is reasonable, as the charge in the nucleus increases, drawing the electrons closer to the center. For the molecules, we notice in particular that the average distance is much greater in the anti-symmetric $\text{H}_2$ state that in the symmetric. This is again reasonable, as the electrons will be more stuck on their individual atoms, and less free to walk around between them. 
+
+We can also investigate the signifigance of the proton distance for $\text{H}_2$. This result of such an investigation is summarized in figure \ref{fig:rvar}. We see that for the symmetric wave function, the lowest energy state is found for $R=1.34$.
+
+
+ \begin{figure}
+\centering
+\includegraphics[width=7cm]{figures/Rvar1.eps}
+\caption{\label{fig:rvar} The figure shows the energy and VMC-parameter dependence on the proton-proton distance $R$ for $\text{H}_2$.}
+\end{figure}
+
+\clearpage
+
+\begin{widetext}
+
 \begin{table}
 \centering
  \begin{tabular}{|ccccccccc|}
@@ -529,39 +547,43 @@ The adaptive method described in section \ref{sec:minimize} was run for the diff
   He & 2.0 & - & -2.740 & -2.9037 & $4\times 10^7$ & 1e-3 & 1.085 & ...  \\
   He & 1.69 & - & -2.8426 & -2.9037 & $4\times 10^7$ & 9e-4 & 1.28 & ... \\
   Be & 3.88 & 0.12 & -14.4827 & -14.6664 & $10^8$ & 5e-4 & 1.31 &  1.25e-2\\
-    Be & 4.0 & 0.087 & -14.4743 & -14.6664 & $4\times 10^7$ & 2e-3 & 2.25 & ...  \\
+  Be & 4.0 & 0.087 & -14.4743 & -14.6664 & $4\times 10^7$ & 2e-3 & 2.25 & ...  \\
   Be & 4.0 & - & -13.696 & -14.6664 & $4\times 10^7$ & 3e-3 & 1.48 & ...  \\
   Be & 3.37 & - & -14.213 & -14.6664 & $4\times 10^7$ & 3e-3 & 1.76 & ...  \\
   Ne & 10.33 & 0.073 & -127.607 & -128.884 & $10^8$ & 3e-3 & 1.18 & 1.00e-2\\
-  Ne & --- & --- & --- & -128.884 & --- & --- & --- & ...\\
+  Ne & 10 & 0.104 & -127.63 & -128.884 & $4\times 10^6$ & 2e-2  & 1.18 & ...\\
   Ne & 10 & - & -112.20 & -128.884 & $4\times 10^6$ & 6e-2 & 0.68 & ...\\
   Ne & 7.81 & - & -121.88 & -128.884 & $4\times 10^6$ & 9e-2 & 0.87 & ...\\
   \hline
  \end{tabular}
 
- \caption{The table shows a summary of VMC results for He, Be and Ne. $\alpha$ and $\beta$ are the variational parameters, $E$ is the optimal energy attained, $E_0$ is the experimental value of the energy, $N$ is the number of monte carlo cycles,   $\sigma_{\text{std}}$ is the standard error calculated as explained in section \ref{sec:block}, $\langle r_{ij} \rangle$ is the average electron separation and $\tilde{\epsilon}$ is the relative error of the VMC result compared to the experimental value.}
+ \caption{The table shows a summary of VMC results for He, Be and Ne. $\alpha$ and $\beta$ are the variational parameters, $E$ is the optimal energy attained, $E_0$ is the experimental value of the energy, $N$ is the number of monte carlo cycles,   $\sigma_{\text{std}}$ is the standard error calculated as explained in section \ref{sec:block}, $\langle r_{ij} \rangle$ is the average electron separation and $\tilde{\epsilon}$ is the relative error of the VMC result compared to the experimental value. The experimental values are taken from \cite{lervaag10}.}
  \label{tab:3}
  \end{table}
 
 \begin{table}
 \centering
- \begin{tabular}{|cccccccccc|}
+ \begin{tabular}{|ccccccccccc|}
   \hline
-  Molecule & $R$ & $\alpha$ & $\beta$ & $E_{\text{VMC}}$& $E_0$ & $N$ & $\sigma_\text{std}$ & $\langle r_{ij} \rangle$ & $\tilde{\epsilon}$ \\
+  Molecule & +- & $R$ & $\alpha$ & $\beta$ & $E_{\text{VMC}}$& $E_0$ & $N$ & $\sigma_\text{std}$ & $\langle r_{ij} \rangle$ & $\tilde{\epsilon}$ \\
   \hline 
-  $\text{H}_2$ & 1.4 & 1.29 & 0.39 & -1.1584 & -1.175 & $10^7$ & 4e-4 & 2.17 & 1.41e-2\\
-  $\text{Be}_2$ & 4.63 & 3.65 & 0.55 & -28.6927 & -29.3385 & $10^7$ & 3e-3 & 3.75 & 2.20e-2 \\
+  $\text{H}_2$ & + & 1.4 & 1.29 & 0.39 & -1.1584 & -1.175 & $10^7$ & 4e-4 & 2.17 & 1.41e-2\\
+  $\text{H}_2$ & + & 1.34 & 1.31 & 0.38 & -1.1577 & -1.175 & $4\times10^7$ & 4e-4 & 2.13 & ...\\
+  $\text{H}_2$ & - & 1.4 & 0.73 & 0.14 & -0.134 & -1.175 & $4\times10^7$ & 3e-3 & 4.48 & ...\\
+  $\text{Be}_2$ & +-+- & 4.63 & 3.65 & 0.55 & -28.692 & -29.3385 & $10^7$ & 3e-3 & 3.75 & 2.20e-2 \\
   \hline
  \end{tabular}
 
- \caption{summary of VMC results for $\text{He}_2$ and $\text{Be}_2$. $\alpha$ and $\beta$ are the variational parameters, $E$ is the optimal energy attained, $E_0$ is the experimental value of the energy, $N$ is the number of monte carlo cycles,   $\sigma_{\text{std}}$ is the standard error calculated as explained in section \ref{sec:block}, $\langle r_{ij} \rangle$ is the average electron separation and $\tilde{\epsilon}$ is the relative error of the VMC result compared to the experimental value.}
+ \caption{summary of VMC results for $\text{He}_2$ and $\text{Be}_2$. $\alpha$ and $\beta$ are the variational parameters, $E$ is the optimal energy attained, $E_0$ is the experimental value of the energy, $N$ is the number of monte carlo cycles,   $\sigma_{\text{std}}$ is the standard error calculated as explained in section \ref{sec:block}, $\langle r_{ij} \rangle$ is the average electron separation and $\tilde{\epsilon}$ is the relative error of the VMC result compared to the experimental value. The +- culumn denotes whether symmetric (+) or anti-symmetric (-) states were used. The experimental values are from \cite{moskowitz81} and \cite{filippi96}}
  \label{tab:4}
 \end{table}
+ \end{widetext}
 
-
-
+\clearpage
 \subsection{One-body densities}
 Using the optimal parameters detailed in the previous section, we can produce the one-body densities of the different systems. This is done by noting that the Metropolis algorithm creates the distribution defined by the wave function. So we simply store that walker positions for a large number of Monte Carlo cycles, and make histograms of the walker positions.
+
+We note that even though minimization over $\alpha$ only, without including the Jastrow factor, gives good approximations to the energies, the one-body densities are quite different. When only minimizing over $\beta$ however, we get densities very close to the complete minimization result. This hints that the correlation term is vital for obtaining good approximations to the ground state. This is especially evident in the cases for Beryllium and Neon.
 
 \begin{figure}[ht]
 \subfigure[radial distribution]{
@@ -580,7 +602,7 @@ Using the optimal parameters detailed in the previous section, we can produce th
 	\includegraphics[width=6cm]{figures/densities/Hexyz.png}
 	\label{fig:subfig64}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of He.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of He. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization.}
 \label{fig:6}
 \end{figure}
 
@@ -601,7 +623,7 @@ Using the optimal parameters detailed in the previous section, we can produce th
 	\includegraphics[width=6cm]{figures/densities/Bexyz.png}
 	\label{fig:subfig74}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of Be.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of Be. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization.}
 \label{fig:7}
 \end{figure}
 
@@ -622,7 +644,7 @@ Using the optimal parameters detailed in the previous section, we can produce th
 	\includegraphics[width=6cm]{figures/densities/Nexyz.png}
 	\label{fig:subfig84}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of Ne.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of Ne. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization.}
 \label{fig:8}
 \end{figure}
 
@@ -644,7 +666,28 @@ Using the optimal parameters detailed in the previous section, we can produce th
 	\includegraphics[width=6cm]{figures/densities/H2xyz.png}
 	\label{fig:subfig94}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of $\text{H}_2$.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of the symmetric solution for $\text{H}_2$.}
+\label{fig:11}
+\end{figure}
+
+\begin{figure}[ht]
+\subfigure[radial distribution]{
+	\includegraphics[width=6cm]{figures/densities/H2mrad.eps}
+	\label{fig:subfig111}
+}
+\subfigure[projection on the x-axis]{
+	\includegraphics[width=6cm]{figures/densities/H2mx.eps}
+	\label{fig:subfig112}
+}
+\subfigure[projection on the xy-plane]{
+	\includegraphics[width=7cm]{figures/densities/H2mxy.eps}
+	\label{fig:subfig113}
+}
+\subfigure[3d distribution]{
+	\includegraphics[width=6cm]{figures/densities/H2mxyz.png}
+	\label{fig:subfig114}
+}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of the anti-symmetric solution for $\text{H}_2$.}
 \label{fig:9}
 \end{figure}
 
@@ -704,13 +747,13 @@ I would like to thank the instructors at the group for Computational Physics and
  
  \item \verb Blocking . Not a part of the rest of the program. Uses data collected from runs to calculate the standard error using the blocking method. 
 \end{itemize}
-And overview of program calls is shown in figure \ref{fig:11}. The code is available at https://github.com/andreavs/fys4411/tree/master/VMC.
+And overview of program calls is shown in figure \ref{fig:12}. The code is available at https://github.com/andreavs/fys4411/tree/master/VMC.
 
 \begin{widetext}
 \begin{figure}
 \centering
 \includegraphics[width=17cm]{figures/programview.png}
-\caption{\label{fig:11} The figure shows the overview of the a typical program run}
+\caption{\label{fig:12} The figure shows the overview of the a typical program run}
 \end{figure}
 \end{widetext}
  
@@ -854,6 +897,31 @@ Finally, it can be shown (but this is more complicated) that
 \end{equation}
 \end{widetext}
  
+ \section{Derivation of the Metropolis-Hastings algorithm}
+ \label{sec:metropolis}
+ The purpose of the Metropolis-Hastings algorithm is to generate a collection of states according to a desired distribution $P(x)$. To accomplish this, the algorithm uses a Markov process which, under certain conditions, asymptotically reaches a unique stationary distribution $\pi(x)$. 
+ 
+ A Markov process is uniquely defined by its transition probabilities, the probability $P(x\rightarrow x')$ of transitioning between any two of its states $x$ to $x'$. A Markov process has a stationary position when the following two conditions are met: 
+ \begin{enumerate}
+  \item Existence of stationary distribution: there must exist a distribution $\pi(x)$ which is stationary. This is guaranteed by the condition of detailed balance, which requires that each transition $x \rightarrow x'$ is reversible: for every pair of states $x, x'$, the probability of being in state $x$ and transit to the state $x'$ must be equal to the probability of being in state $x'$ and transit to the state $x$, $\pi(x) P(x\rightarrow x') = \pi(x')P(x'\rightarrow x)$.
+  
+  \item uniqueness of statinary distribution: the stationary distribution $\pi(x)$ must be unique. This is guaranteed by ergodicity of the Markov process, which requires that every state must be aperiodic --- the system does not return to the state at fixed intervals, and (2), be positive recurrent --- the system will, nonetheless, return to the state with nonzero probability.
+ \end{enumerate}
+ 
+ Metropolis-Hastings algorithm resides in designing a Markov process (by constructing trasition probabilities) which fulfills the two above conditions, such that its stationary distribution $\pi(x)$ is chosen to be $P(x)$.
+ 
+ The derivation starts with the condition of detailed balance 
+ \begin{equation}
+  P(x)P(x\rightarrow x') = P(x')P(x'\rightarrow)
+ \end{equation}
+ which can be rewritten as 
+ \begin{equation}
+  {P(x\rightarrow x') \over P(x'\rightarrow x)}
+ \end{equation}
+
+
+
+ 
 \end{appendices}
 
 
@@ -876,7 +944,7 @@ Finally, it can be shown (but this is more complicated) that
   \bibinfo{journal}{Int. Journal of Quantum Chemistry} \textbf{\bibinfo{volume}{20}},
   \bibinfo{pages}{1107} (\bibinfo{year}{1981}).
 
-\bibitem[{\citenamefont{Filippi, Singh and Umrigar}(1996)}]{filippi60}
+\bibitem[{\citenamefont{Filippi, Singh and Umrigar}(1996)}]{filippi96}
 \bibinfo{author}{\bibnamefont{Filippi}} \bibnamefont{,} \bibinfo{author}{\bibnamefont{Singh}}  \bibnamefont{and}
   \bibinfo{author}{\bibnamefont{Umrigar}},
   \bibinfo{journal}{J. Chemical Physics} \textbf{\bibinfo{volume}{105}},
@@ -886,6 +954,11 @@ Finally, it can be shown (but this is more complicated) that
   \bibinfo{author}{\bibnamefont{Petersen}},
   \bibinfo{journal}{J. Chemical Physics} \textbf{\bibinfo{volume}{91}},
   \bibinfo{pages}{91} (\bibinfo{year}{1989}).
+  
+    \bibitem[{\citenamefont{L. E. Lervåg}(2010)}]{lervaag10} 
+    \bibnamefont{L. E. }\bibinfo{author}{\bibnamefont{Lerv\aa g}},
+  \bibinfo{journal}{Master Thesis},
+  \bibinfo{pages}{117-134} (\bibinfo{year}{2010}).
 \end{thebibliography}
 
 \end{document}

@@ -1,6 +1,5 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.1.7)  20 MAY 2013 19:15
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.1.7)  30 MAY 2013 18:04
 entering extended mode
- \write18 enabled.
  %&-line parsing enabled.
 **report.tex
 (./report.tex
@@ -259,11 +258,13 @@ Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 )
+
+Package epstopdf Warning: Shell escape feature is not enabled.
+
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 433.
-
 (/usr/share/texmf-texlive/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2009/10/26 v1.1 Configuration of epstopdf for TeX Live
 )))
@@ -549,7 +550,7 @@ d-to.pdf figures/errors.eps>
 (epstopdf)             \includegraphics on input line 261.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/errors-eps-converted-to.pdf, id=136, 564.1075pt x 418.56375pt>
+<figures/errors-eps-converted-to.pdf, id=141, 564.1075pt x 418.56375pt>
 File: figures/errors-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/errors-eps-converted-to.pdf>
@@ -558,12 +559,6 @@ Overfull \hbox (10.0748pt too wide) in paragraph at lines 261--262
  []
 
 [3 <./figures/errors-eps-converted-to.pdf>] [4]
-
-LaTeX Warning: Reference `fig:3' on page 5 undefined on input line 416.
-
-
-LaTeX Warning: Reference `fig:addap2' on page 5 undefined on input line 458.
-
 Package epstopdf Info: Source file: <figures/addaptiveplot1.eps>
 (epstopdf)                    date: 2013-05-19 17:16:15
 (epstopdf)                    size: 12902 bytes
@@ -573,9 +568,10 @@ f>
 (epstopdf)                    size: 8127 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/addaptiveplot1-eps-
 converted-to.pdf figures/addaptiveplot1.eps>
-(epstopdf)             \includegraphics on input line 462.
+(epstopdf)             \includegraphics on input line 464.
 Package epstopdf Info: Output file is already uptodate.
-<figures/addaptiveplot1-eps-converted-to.pdf, id=187, 421.575pt x 317.185pt>
+
+<figures/addaptiveplot1-eps-converted-to.pdf, id=194, 421.575pt x 317.185pt>
 File: figures/addaptiveplot1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/addaptiveplot1-eps-converted-to.pdf>
@@ -588,29 +584,29 @@ f>
 (epstopdf)                    size: 36478 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/addaptiveplot2-eps-
 converted-to.pdf figures/addaptiveplot2.eps>
-(epstopdf)             \includegraphics on input line 468.
+(epstopdf)             \includegraphics on input line 470.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/addaptiveplot2-eps-converted-to.pdf, id=190, 517.935pt x 295.1025pt>
+<figures/addaptiveplot2-eps-converted-to.pdf, id=197, 517.935pt x 295.1025pt>
 File: figures/addaptiveplot2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/addaptiveplot2-eps-converted-to.pdf>
-Overfull \hbox (41.97734pt too wide) detected at line 476
+Overfull \hbox (41.97734pt too wide) detected at line 478
 [][]\OMS/cmsy/m/n/10 h\OML/cmm/m/it/10 E\OMS/cmsy/m/n/10 i \OT1/cmr/m/n/10 = 2 
 []
  []
 
 [5]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 490.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 492.
 
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 490.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 492.
 
 
 Class revtex4 Warning: Deferred float stuck during \clearpage processing.
 
-<figures/blockingex.png, id=217, 586.8324pt x 442.2924pt>
+<figures/blockingex.png, id=225, 586.8324pt x 442.2924pt>
 File: figures/blockingex.png Graphic file (type png)
 
 <use figures/blockingex.png>
@@ -622,73 +618,87 @@ Package epstopdf Info: Source file: <figures/blockingdt.eps>
 (epstopdf)                    size: 32096 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/blockingdt-eps-conv
 erted-to.pdf figures/blockingdt.eps>
-(epstopdf)             \includegraphics on input line 514.
+(epstopdf)             \includegraphics on input line 516.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/blockingdt-eps-converted-to.pdf, id=220, 564.1075pt x 402.50375pt>
+<figures/blockingdt-eps-converted-to.pdf, id=229, 564.1075pt x 402.50375pt>
 File: figures/blockingdt-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figures/blockingdt-eps-converted-to.pdf>
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 518.
+(hyperref)                removing `subscript' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 518.
+(hyperref)                removing `subscript' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 518.
-
-
-Overfull \hbox (16.68456pt too wide) in paragraph at lines 523--541
- []$[]$ 
- []
+(hyperref)                removing `math shift' on input line 520.
 
 [6 <./figures/addaptiveplot1-eps-converted-to.pdf> <./figures/addaptiveplot2-ep
-s-converted-to.pdf> <./figures/blockingex.png> <./figures/blockingdt-eps-conver
-ted-to.pdf>]
-Overfull \hbox (21.94922pt too wide) in paragraph at lines 548--556
- []$[]$ 
- []
+s-converted-to.pdf> <./figures/blockingex.png>]
 
+LaTeX Warning: A float is stuck (cannot be placed) on input line 525.
+
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 525.
+
+
+Class revtex4 Warning: Deferred float stuck during \clearpage processing.
+
+Package epstopdf Info: Source file: <figures/Rvar1.eps>
+(epstopdf)                    date: 2013-05-21 18:20:02
+(epstopdf)                    size: 18978 bytes
+(epstopdf)             Output file: <figures/Rvar1-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-05-21 18:35:53
+(epstopdf)                    size: 14072 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/Rvar1-eps-converted
+-to.pdf figures/Rvar1.eps>
+(epstopdf)             \includegraphics on input line 531.
+Package epstopdf Info: Output file is already uptodate.
+<figures/Rvar1-eps-converted-to.pdf, id=259, 449.68pt x 338.26375pt>
+File: figures/Rvar1-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figures/Rvar1-eps-converted-to.pdf> [7 <./figures/blockingdt-eps-converted
+-to.pdf> <./figures/Rvar1-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figures/densities/Herad.eps>
 (epstopdf)                    date: 2013-05-20 16:10:52
 (epstopdf)                    size: 35582 bytes
@@ -698,10 +708,10 @@ df>
 (epstopdf)                    size: 21474 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Herad-eps
 -converted-to.pdf figures/densities/Herad.eps>
-(epstopdf)             \includegraphics on input line 570.
+(epstopdf)             \includegraphics on input line 592.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Herad-eps-converted-to.pdf, id=261, 587.19376pt x 442.65375p
+<figures/densities/Herad-eps-converted-to.pdf, id=291, 587.19376pt x 442.65375p
 t>
 File: figures/densities/Herad-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Herad-eps-converted-to.pdf>
@@ -714,10 +724,10 @@ Package epstopdf Info: Source file: <figures/densities/Hex.eps>
 (epstopdf)                    size: 15317 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Hex-eps-c
 onverted-to.pdf figures/densities/Hex.eps>
-(epstopdf)             \includegraphics on input line 574.
+(epstopdf)             \includegraphics on input line 596.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Hex-eps-converted-to.pdf, id=262, 587.19376pt x 442.65375pt>
+<figures/densities/Hex-eps-converted-to.pdf, id=292, 587.19376pt x 442.65375pt>
 File: figures/densities/Hex-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/densities/Hex-eps-converted-to.pdf>
 Package epstopdf Info: Source file: <figures/densities/Hexy.eps>
@@ -729,19 +739,19 @@ f>
 (epstopdf)                    size: 47804 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Hexy-eps-
 converted-to.pdf figures/densities/Hexy.eps>
-(epstopdf)             \includegraphics on input line 578.
+(epstopdf)             \includegraphics on input line 600.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Hexy-eps-converted-to.pdf, id=263, 587.19376pt x 442.65375pt
+<figures/densities/Hexy-eps-converted-to.pdf, id=293, 587.19376pt x 442.65375pt
 >
 File: figures/densities/Hexy-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Hexy-eps-converted-to.pdf>
-<figures/densities/Hexyz.png, id=264, 401.5pt x 321.2pt>
+<figures/densities/Hexyz.png, id=294, 401.5pt x 321.2pt>
 File: figures/densities/Hexyz.png Graphic file (type png)
 
 <use figures/densities/Hexyz.png>
 
-LaTeX Warning: Float too large for page by 23.09763pt on input line 585.
+LaTeX Warning: Float too large for page by 23.09763pt on input line 607.
 
 Package epstopdf Info: Source file: <figures/densities/Berad.eps>
 (epstopdf)                    date: 2013-05-20 17:54:03
@@ -752,10 +762,10 @@ df>
 (epstopdf)                    size: 21580 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Berad-eps
 -converted-to.pdf figures/densities/Berad.eps>
-(epstopdf)             \includegraphics on input line 591.
+(epstopdf)             \includegraphics on input line 613.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Berad-eps-converted-to.pdf, id=265, 587.19376pt x 442.65375p
+<figures/densities/Berad-eps-converted-to.pdf, id=295, 587.19376pt x 442.65375p
 t>
 File: figures/densities/Berad-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Berad-eps-converted-to.pdf>
@@ -768,10 +778,10 @@ Package epstopdf Info: Source file: <figures/densities/Bex.eps>
 (epstopdf)                    size: 17861 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Bex-eps-c
 onverted-to.pdf figures/densities/Bex.eps>
-(epstopdf)             \includegraphics on input line 595.
+(epstopdf)             \includegraphics on input line 617.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Bex-eps-converted-to.pdf, id=266, 587.19376pt x 442.65375pt>
+<figures/densities/Bex-eps-converted-to.pdf, id=296, 587.19376pt x 442.65375pt>
 File: figures/densities/Bex-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/densities/Bex-eps-converted-to.pdf>
 Package epstopdf Info: Source file: <figures/densities/Bexy.eps>
@@ -783,39 +793,33 @@ f>
 (epstopdf)                    size: 84170 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Bexy-eps-
 converted-to.pdf figures/densities/Bexy.eps>
-(epstopdf)             \includegraphics on input line 599.
+(epstopdf)             \includegraphics on input line 621.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Bexy-eps-converted-to.pdf, id=267, 587.19376pt x 442.65375pt
+<figures/densities/Bexy-eps-converted-to.pdf, id=297, 587.19376pt x 442.65375pt
 >
 File: figures/densities/Bexy-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Bexy-eps-converted-to.pdf>
-<figures/densities/Bexyz.png, id=268, 401.5pt x 321.2pt>
+<figures/densities/Bexyz.png, id=298, 401.5pt x 321.2pt>
 File: figures/densities/Bexyz.png Graphic file (type png)
 
 <use figures/densities/Bexyz.png>
 
-LaTeX Warning: Float too large for page by 23.09763pt on input line 606.
+LaTeX Warning: Float too large for page by 23.09763pt on input line 628.
 
 Package epstopdf Info: Source file: <figures/densities/Nerad.eps>
 (epstopdf)                    date: 2013-05-20 19:13:21
 (epstopdf)                    size: 37472 bytes
 (epstopdf)             Output file: <figures/densities/Nerad-eps-converted-to.p
 df>
-(epstopdf)                    date: 2013-05-15 11:00:16
-(epstopdf)                    size: 14113 bytes
+(epstopdf)                    date: 2013-05-20 19:15:13
+(epstopdf)                    size: 20986 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Nerad-eps
 -converted-to.pdf figures/densities/Nerad.eps>
-(epstopdf)             \includegraphics on input line 612.
-runsystem(epstopdf --outfile=figures/densities/Nerad-eps-converted-to.pdf figur
-es/densities/Nerad.eps)...executed.
+(epstopdf)             \includegraphics on input line 634.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <figures/densities/Nerad-eps-converted-to.p
-df>
-(epstopdf)                    date: 2013-05-20 19:15:13
-(epstopdf)                    size: 20986 bytes.
-
-<figures/densities/Nerad-eps-converted-to.pdf, id=269, 587.19376pt x 442.65375p
+<figures/densities/Nerad-eps-converted-to.pdf, id=299, 587.19376pt x 442.65375p
 t>
 File: figures/densities/Nerad-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Nerad-eps-converted-to.pdf>
@@ -828,10 +832,10 @@ Package epstopdf Info: Source file: <figures/densities/Nex.eps>
 (epstopdf)                    size: 14778 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Nex-eps-c
 onverted-to.pdf figures/densities/Nex.eps>
-(epstopdf)             \includegraphics on input line 616.
+(epstopdf)             \includegraphics on input line 638.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Nex-eps-converted-to.pdf, id=270, 587.19376pt x 442.65375pt>
+<figures/densities/Nex-eps-converted-to.pdf, id=300, 587.19376pt x 442.65375pt>
 File: figures/densities/Nex-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/densities/Nex-eps-converted-to.pdf>
 Package epstopdf Info: Source file: <figures/densities/Nexy.eps>
@@ -843,19 +847,19 @@ f>
 (epstopdf)                    size: 37045 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Nexy-eps-
 converted-to.pdf figures/densities/Nexy.eps>
-(epstopdf)             \includegraphics on input line 620.
+(epstopdf)             \includegraphics on input line 642.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Nexy-eps-converted-to.pdf, id=271, 587.19376pt x 442.65375pt
+<figures/densities/Nexy-eps-converted-to.pdf, id=301, 587.19376pt x 442.65375pt
 >
 File: figures/densities/Nexy-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Nexy-eps-converted-to.pdf>
-<figures/densities/Nexyz.png, id=272, 401.5pt x 321.2pt>
+<figures/densities/Nexyz.png, id=302, 401.5pt x 321.2pt>
 File: figures/densities/Nexyz.png Graphic file (type png)
 
 <use figures/densities/Nexyz.png>
 
-LaTeX Warning: Float too large for page by 23.09763pt on input line 627.
+LaTeX Warning: Float too large for page by 23.09763pt on input line 649.
 
 Package epstopdf Info: Source file: <figures/densities/H2rad.eps>
 (epstopdf)                    date: 2013-05-15 11:15:34
@@ -866,10 +870,10 @@ df>
 (epstopdf)                    size: 15962 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/H2rad-eps
 -converted-to.pdf figures/densities/H2rad.eps>
-(epstopdf)             \includegraphics on input line 634.
+(epstopdf)             \includegraphics on input line 656.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/H2rad-eps-converted-to.pdf, id=273, 587.19376pt x 442.65375p
+<figures/densities/H2rad-eps-converted-to.pdf, id=303, 587.19376pt x 442.65375p
 t>
 File: figures/densities/H2rad-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/H2rad-eps-converted-to.pdf>
@@ -882,10 +886,10 @@ Package epstopdf Info: Source file: <figures/densities/H2x.eps>
 (epstopdf)                    size: 16551 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/H2x-eps-c
 onverted-to.pdf figures/densities/H2x.eps>
-(epstopdf)             \includegraphics on input line 638.
+(epstopdf)             \includegraphics on input line 660.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/H2x-eps-converted-to.pdf, id=274, 587.19376pt x 442.65375pt>
+<figures/densities/H2x-eps-converted-to.pdf, id=304, 587.19376pt x 442.65375pt>
 File: figures/densities/H2x-eps-converted-to.pdf Graphic file (type pdf)
 <use figures/densities/H2x-eps-converted-to.pdf>
 Package epstopdf Info: Source file: <figures/densities/H2xy.eps>
@@ -897,17 +901,75 @@ f>
 (epstopdf)                    size: 88682 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/H2xy-eps-
 converted-to.pdf figures/densities/H2xy.eps>
-(epstopdf)             \includegraphics on input line 642.
+(epstopdf)             \includegraphics on input line 664.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/H2xy-eps-converted-to.pdf, id=275, 587.19376pt x 442.65375pt
+<figures/densities/H2xy-eps-converted-to.pdf, id=305, 587.19376pt x 442.65375pt
 >
 File: figures/densities/H2xy-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/H2xy-eps-converted-to.pdf>
-<figures/densities/H2xyz.png, id=276, 401.5pt x 321.2pt>
+<figures/densities/H2xyz.png, id=306, 401.5pt x 321.2pt>
 File: figures/densities/H2xyz.png Graphic file (type png)
 
 <use figures/densities/H2xyz.png>
+
+LaTeX Warning: Float too large for page by 1.34761pt on input line 671.
+
+Package epstopdf Info: Source file: <figures/densities/H2mrad.eps>
+(epstopdf)                    date: 2013-05-21 13:59:49
+(epstopdf)                    size: 25108 bytes
+(epstopdf)             Output file: <figures/densities/H2mrad-eps-converted-to.
+pdf>
+(epstopdf)                    date: 2013-05-21 16:05:19
+(epstopdf)                    size: 15752 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/densities/H2mrad-ep
+s-converted-to.pdf figures/densities/H2mrad.eps>
+(epstopdf)             \includegraphics on input line 677.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/densities/H2mrad-eps-converted-to.pdf, id=307, 587.19376pt x 442.65375
+pt>
+File: figures/densities/H2mrad-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/densities/H2mrad-eps-converted-to.pdf>
+Package epstopdf Info: Source file: <figures/densities/H2mx.eps>
+(epstopdf)                    date: 2013-05-21 14:00:09
+(epstopdf)                    size: 21743 bytes
+(epstopdf)             Output file: <figures/densities/H2mx-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2013-05-21 16:05:19
+(epstopdf)                    size: 15241 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/densities/H2mx-eps-
+converted-to.pdf figures/densities/H2mx.eps>
+(epstopdf)             \includegraphics on input line 681.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/densities/H2mx-eps-converted-to.pdf, id=308, 587.19376pt x 442.65375pt
+>
+File: figures/densities/H2mx-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/densities/H2mx-eps-converted-to.pdf>
+Package epstopdf Info: Source file: <figures/densities/H2mxy.eps>
+(epstopdf)                    date: 2013-05-21 14:00:32
+(epstopdf)                    size: 1537902 bytes
+(epstopdf)             Output file: <figures/densities/H2mxy-eps-converted-to.p
+df>
+(epstopdf)                    date: 2013-05-21 16:05:20
+(epstopdf)                    size: 55134 bytes
+(epstopdf)             Command: <epstopdf --outfile=figures/densities/H2mxy-eps
+-converted-to.pdf figures/densities/H2mxy.eps>
+(epstopdf)             \includegraphics on input line 685.
+Package epstopdf Info: Output file is already uptodate.
+
+<figures/densities/H2mxy-eps-converted-to.pdf, id=309, 587.19376pt x 442.65375p
+t>
+File: figures/densities/H2mxy-eps-converted-to.pdf Graphic file (type pdf)
+ <use figures/densities/H2mxy-eps-converted-to.pdf>
+<figures/densities/H2mxyz.png, id=310, 401.5pt x 321.2pt>
+File: figures/densities/H2mxyz.png Graphic file (type png)
+
+<use figures/densities/H2mxyz.png>
+
+LaTeX Warning: Float too large for page by 1.34761pt on input line 692.
+
 Package epstopdf Info: Source file: <figures/densities/Be2rad.eps>
 (epstopdf)                    date: 2013-05-16 11:00:47
 (epstopdf)                    size: 24505 bytes
@@ -917,10 +979,10 @@ pdf>
 (epstopdf)                    size: 15931 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Be2rad-ep
 s-converted-to.pdf figures/densities/Be2rad.eps>
-(epstopdf)             \includegraphics on input line 655.
+(epstopdf)             \includegraphics on input line 698.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Be2rad-eps-converted-to.pdf, id=277, 587.19376pt x 442.65375
+<figures/densities/Be2rad-eps-converted-to.pdf, id=311, 587.19376pt x 442.65375
 pt>
 File: figures/densities/Be2rad-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Be2rad-eps-converted-to.pdf>
@@ -933,10 +995,10 @@ f>
 (epstopdf)                    size: 14852 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Be2x-eps-
 converted-to.pdf figures/densities/Be2x.eps>
-(epstopdf)             \includegraphics on input line 659.
+(epstopdf)             \includegraphics on input line 702.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Be2x-eps-converted-to.pdf, id=278, 587.19376pt x 442.65375pt
+<figures/densities/Be2x-eps-converted-to.pdf, id=312, 587.19376pt x 442.65375pt
 >
 File: figures/densities/Be2x-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Be2x-eps-converted-to.pdf>
@@ -949,120 +1011,125 @@ df>
 (epstopdf)                    size: 49594 bytes
 (epstopdf)             Command: <epstopdf --outfile=figures/densities/Be2xy-eps
 -converted-to.pdf figures/densities/Be2xy.eps>
-(epstopdf)             \includegraphics on input line 663.
+(epstopdf)             \includegraphics on input line 706.
 Package epstopdf Info: Output file is already uptodate.
 
-<figures/densities/Be2xy-eps-converted-to.pdf, id=279, 587.19376pt x 442.65375p
+<figures/densities/Be2xy-eps-converted-to.pdf, id=313, 587.19376pt x 442.65375p
 t>
 File: figures/densities/Be2xy-eps-converted-to.pdf Graphic file (type pdf)
  <use figures/densities/Be2xy-eps-converted-to.pdf>
-<figures/densities/Be2xyz.png, id=280, 401.5pt x 321.2pt>
+<figures/densities/Be2xyz.png, id=314, 401.5pt x 321.2pt>
 File: figures/densities/Be2xyz.png Graphic file (type png)
 
-<use figures/densities/Be2xyz.png> [7 <./figures/densities/Herad-eps-converted-
-to.pdf> <./figures/densities/Hex-eps-converted-to.pdf> <./figures/densities/Hex
-y-eps-converted-to.pdf> <./figures/densities/Hexyz.png (PNG copy)>]
+<use figures/densities/Be2xyz.png> [8]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 672.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 715.
 
 
 Class revtex4 Warning: Deferred float stuck during \clearpage processing.
 
-[8 <./figures/densities/Berad-eps-converted-to.pdf> <./figures/densities/Bex-ep
-s-converted-to.pdf> <./figures/densities/Bexy-eps-converted-to.pdf> <./figures/
-densities/Bexyz.png (PNG copy)> <./figures/densities/Nerad-eps-converted-to.pdf
-> <./figures/densities/Nex-eps-converted-to.pdf> <./figures/densities/Nexy-eps-
-converted-to.pdf> <./figures/densities/Nexyz.png (PNG copy)>]
+[9 <./figures/densities/Herad-eps-converted-to.pdf> <./figures/densities/Hex-ep
+s-converted-to.pdf> <./figures/densities/Hexy-eps-converted-to.pdf> <./figures/
+densities/Hexyz.png (PNG copy)> <./figures/densities/Berad-eps-converted-to.pdf
+> <./figures/densities/Bex-eps-converted-to.pdf> <./figures/densities/Bexy-eps-
+converted-to.pdf> <./figures/densities/Bexyz.png (PNG copy)>]
 
-LaTeX Warning: A float is stuck (cannot be placed) on input line 672.
+LaTeX Warning: A float is stuck (cannot be placed) on input line 715.
 
 
 Class revtex4 Warning: Deferred float stuck during \clearpage processing.
 
-[9 <./figures/densities/H2rad-eps-converted-to.pdf> <./figures/densities/H2x-ep
-s-converted-to.pdf> <./figures/densities/H2xy-eps-converted-to.pdf> <./figures/
-densities/H2xyz.png (PNG copy)> <./figures/densities/Be2rad-eps-converted-to.pd
-f> <./figures/densities/Be2x-eps-converted-to.pdf> <./figures/densities/Be2xy-e
-ps-converted-to.pdf> <./figures/densities/Be2xyz.png (PNG copy)>]
+[10 <./figures/densities/Nerad-eps-converted-to.pdf> <./figures/densities/Nex-e
+ps-converted-to.pdf> <./figures/densities/Nexy-eps-converted-to.pdf> <./figures
+/densities/Nexyz.png (PNG copy)> <./figures/densities/H2rad-eps-converted-to.pd
+f> <./figures/densities/H2x-eps-converted-to.pdf> <./figures/densities/H2xy-eps
+-converted-to.pdf> <./figures/densities/H2xyz.png (PNG copy)>]
+
+LaTeX Warning: A float is stuck (cannot be placed) on input line 715.
+
+
+Class revtex4 Warning: Deferred float stuck during \clearpage processing.
+
+[11 <./figures/densities/H2mrad-eps-converted-to.pdf> <./figures/densities/H2mx
+-eps-converted-to.pdf> <./figures/densities/H2mxy-eps-converted-to.pdf> <./figu
+res/densities/H2mxyz.png (PNG copy)> <./figures/densities/Be2rad-eps-converted-
+to.pdf> <./figures/densities/Be2x-eps-converted-to.pdf> <./figures/densities/Be
+2xy-eps-converted-to.pdf> <./figures/densities/Be2xyz.png (PNG copy)>]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¸ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¸ in font cmr10!
 
-Underfull \hbox (badness 10000) in paragraph at lines 703--704
+Underfull \hbox (badness 10000) in paragraph at lines 746--747
  [][]\OT1/cmtt/m/n/10 MoleculeOrbital []inherits []Orbital\OT1/cmr/m/n/10 , the
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--708
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
 \OT1/cmr/m/n/10 And overview of pro-gram calls is shown
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 707--708
-\OT1/cmr/m/n/10 in fig-ure [][]11[][]. The code is avail-able at
+Underfull \hbox (badness 10000) in paragraph at lines 750--751
+\OT1/cmr/m/n/10 in fig-ure [][]13[][]. The code is avail-able at
  []
 
 
-Overfull \hbox (6.52837pt too wide) in paragraph at lines 707--708
+Overfull \hbox (6.52837pt too wide) in paragraph at lines 750--751
 \OT1/cmr/m/n/10 https://github.com/andreavs/fys4411/tree/master/VMC. 
  []
 
-<figures/programview.png, id=756, 1003.49907pt x 931.22906pt>
+<figures/programview.png, id=877, 1003.49907pt x 931.22906pt>
 File: figures/programview.png Graphic file (type png)
 
 <use figures/programview.png>
-Overfull \hbox (237.69684pt too wide) in paragraph at lines 712--713
+Overfull \hbox (237.69684pt too wide) in paragraph at lines 755--756
  [][] 
  []
 
-[10] [11 <./figures/programview.png>]
-Overfull \hbox (126.81377pt too wide) in paragraph at lines 787--803
+[12] [13 <./figures/programview.png>]
+Overfull \hbox (126.81377pt too wide) in paragraph at lines 830--846
  []$[]$ 
  []
 
-[12] [13] [14] (./report.aux)
-
-LaTeX Warning: There were undefined references.
-
- ) 
+[14] [15] [16] (./report.aux) ) 
 Here is how much of TeX's memory you used:
- 9101 strings out of 493848
- 129535 string characters out of 1152824
+ 9157 strings out of 493848
+ 130883 string characters out of 1152824
  262388 words of memory out of 3000000
- 12025 multiletter control sequences out of 15000+50000
+ 12059 multiletter control sequences out of 15000+50000
  13916 words of font info for 52 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 41i,16n,58p,800b,385s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmbx6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmbx7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx9.
-pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1
-/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi
-9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmib10.pfb></us
-r/share/texmf-texlive/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/shar
-e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texl
-ive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr8
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
-are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-texlive/fonts
-/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/c
-m/cmti10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti9.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on report.pdf (14 pages, 1459716 bytes).
+ 41i,16n,58p,826b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-su
+per-ts1.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx6.pfb></usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cme
+xtra/cmex9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.
+pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/sh
+are/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmmib10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cmextra/cmmib7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/
+share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-t
+exlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/te
+xmf-texlive/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-texlive/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmti9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
+onts/cm/cmtt10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on report.pdf (16 pages, 1594099 bytes).
 PDF statistics:
- 941 PDF objects out of 1000 (max. 8388607)
- 167 named destinations out of 1000 (max. 500000)
- 291 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1072 PDF objects out of 1200 (max. 8388607)
+ 184 named destinations out of 1000 (max. 500000)
+ 324 words of extra memory for PDF output out of 10000 (max. 10000000)
 

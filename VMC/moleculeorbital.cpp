@@ -51,9 +51,6 @@ double MoleculeOrbital::waveFunction(const vec &r){
     else if(p==0){
         ret = ret1-ret2;
     }
-    if(abs(ret) < pow(10,-300)) {
-        cout << n << " " << l << " " << m << " " << p << " " << r1p1 << " " << r1p2 << " " << ret1 << " " << ret2 << " " << ret<< endl;
-    }
      //R.print("R:");
     return ret;
 }
@@ -243,7 +240,7 @@ double MoleculeOrbital::d2PhidAlpha2(const vec &r){
     r1p1 = sqrt(r1p1);
     r1p2 = sqrt(r1p2);
     if(n==1){
-        ret =  r1p1*r1p1*exp(-alpha*r1p1) + r1p2*r1p2*exp(-alpha*r1p2);
+        ret =  r1p1*r1p1*exp(-alpha*r1p1) - r1p2*r1p2*exp(-alpha*r1p2);
     }
     else{
         cout << "Error! tried to access unknown wavefunction " << n << endl;

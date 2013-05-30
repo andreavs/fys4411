@@ -61,7 +61,7 @@ vec VMCSetup::runBruteForceSimulation(double firstAlpha, double lastAlpha, int n
     return ret;
 }
 
-void VMCSetup::runSingleSimulation(double alpha, double beta, bool incJas, bool incSelf, bool incPreComp, bool storeResults, bool storePositions, bool saveR12){
+double VMCSetup::runSingleSimulation(double alpha, double beta, bool incJas, bool incSelf, bool incPreComp, bool storeResults, bool storePositions, bool saveR12){
     int numprocs, my_rank;
     MPI_Comm_size(MPI_COMM_WORLD, &numprocs);
     MPI_Comm_rank(MPI_COMM_WORLD, &my_rank);
@@ -80,6 +80,7 @@ void VMCSetup::runSingleSimulation(double alpha, double beta, bool incJas, bool 
 
 
     cout << "Thread nr. " << my_rank << " has Energy: " << e << " Energy Squared; " << es << endl;
+    return e;
 }
 
 void VMCSetup::runConjGradSimulation(double firstAlpha, double firstBeta, int maxIterations, double tolerance, int nTestCycles, bool incJas, bool incSelf, bool incPreComp){
@@ -257,7 +258,7 @@ vec VMCSetup::runSteepestDescent(double firstAlpha, double firstBeta, int maxIte
         gradient.print("g");
         energies(counter) = e;
         //c = min(2.0,1./((counter+1)*norm(gradient,2)));///(counter+1);
-        alpha = 10.0;//max(alpha - alphaStep*sign(gradient(0)),0.01);
+        alpha = max(alpha - alphaStep*sign(gradient(0)),0.01);
         beta = beta - betaStep*sign(gradient(1));
         if(beta<0){
             beta = 0.01;

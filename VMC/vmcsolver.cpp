@@ -168,8 +168,8 @@ double VMCSolver::runMonteCarloIntegration(double *e, double *es, bool saveResul
     }
     double tot_e;
     double tot_es;
-    MPI_Allreduce(&energy, &tot_e, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
-    MPI_Allreduce(&energySquared, &tot_es, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+    //MPI_Allreduce(&energy, &tot_e, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
+    //MPI_Allreduce(&energySquared, &tot_es, 1, MPI_DOUBLE, MPI_SUM, MPI_COMM_WORLD);
     if(my_rank ==0){
         tot_e = tot_e/numprocs;
         tot_es = tot_es/numprocs;

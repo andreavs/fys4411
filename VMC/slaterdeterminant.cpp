@@ -44,10 +44,10 @@ SlaterDeterminant::SlaterDeterminant(Atom *atom, int nP, int nD, double a, const
     }
     else{
         cout << "lolololo" << endl;
-        orbitals.push_back(new MoleculeOrbital(1,0,0,nD,nP,a, atom,1));
-        orbitals.push_back(new MoleculeOrbital(1,0,0,nD,nP,a, atom,1));
         orbitals.push_back(new MoleculeOrbital(1,0,0,nD,nP,a, atom,0));
         orbitals.push_back(new MoleculeOrbital(1,0,0,nD,nP,a, atom,0));
+        orbitals.push_back(new MoleculeOrbital(1,0,0,nD,nP,a, atom,1));
+        orbitals.push_back(new MoleculeOrbital(1,0,0,nD,nP,a, atom,1));
         orbitals.push_back(new MoleculeOrbital(2,0,0,nD,nP,a, atom,1));
         orbitals.push_back(new MoleculeOrbital(2,0,0,nD,nP,a, atom,1));
         orbitals.push_back(new MoleculeOrbital(2,0,0,nD,nP,a, atom,0));
