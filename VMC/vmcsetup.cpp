@@ -84,6 +84,7 @@ double VMCSetup::runSingleSimulation(double alpha, double beta, bool incJas, boo
 }
 
 void VMCSetup::runConjGradSimulation(double firstAlpha, double firstBeta, int maxIterations, double tolerance, int nTestCycles, bool incJas, bool incSelf, bool incPreComp){
+    // INCOMPLETE
     bool includeJastrow = incJas;
     bool includeSelf = incSelf;
     bool includePreComputed = incPreComp;
@@ -116,6 +117,7 @@ void VMCSetup::runConjGradSimulation(double firstAlpha, double firstBeta, int ma
 }
 
 vec VMCSetup::runBroydensMethod(double firstAlpha, double firstBeta, int maxIterations, double tolerance, int nTestCycles, bool incJas, bool incSelf, bool incPreComp){
+    // INCOMPLETE
     bool includeJastrow = incJas;
     bool includeSelf = incSelf;
     bool includePreComputed = incPreComp;
@@ -257,7 +259,6 @@ vec VMCSetup::runSteepestDescent(double firstAlpha, double firstBeta, int maxIte
         gradient << dpda << dpdb;
         gradient.print("g");
         energies(counter) = e;
-        //c = min(2.0,1./((counter+1)*norm(gradient,2)));///(counter+1);
         alpha = max(alpha - alphaStep*sign(gradient(0)),0.01);
         beta = beta - betaStep*sign(gradient(1));
         if(beta<0){
@@ -275,7 +276,6 @@ vec VMCSetup::runSteepestDescent(double firstAlpha, double firstBeta, int maxIte
             alphaStep *= 1.1;
             cout << "alphastep: " << alphaStep << endl;
         }
-        cout << "balle" << sign(gradient(1)) << " " << sign(oldGradient(1)) << endl;
         s1 = sign(gradient(1));
         s2 = sign(oldGradient(1));
         if(s1 != s2){
@@ -301,6 +301,7 @@ vec VMCSetup::runSteepestDescent(double firstAlpha, double firstBeta, int maxIte
 
 
 vec VMCSetup::runNewtonsMethod(double firstAlpha, double firstBeta, int maxIterations, double tolerance, int nTestCycles, bool incJas, bool incSelf, bool incPreComp){
+    //INCOMPLETE
     bool includeJastrow = incJas;
     bool includeSelf = incSelf;
     bool includePreComputed = incPreComp;

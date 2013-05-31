@@ -1,3 +1,5 @@
+//written by sigve boe skattum
+
 #ifndef BLOCKING_H
 #define BLOCKING_H
 

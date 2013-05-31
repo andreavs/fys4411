@@ -62,15 +62,7 @@ SlaterDeterminant::SlaterDeterminant(Atom *atom, int nP, int nD, double a, const
     oldSlaterDown = slaterDown;
     ratioUp = 0;
     ratioDown = 0;
-    //slaterUp.print("up");
-    //slaterDown.print("down");
-    slaterUpInverse = inv(slaterUp);
-    slaterDownInverse = inv(slaterDown);
-    slaterUpDeterminant = det(slaterUp);
-    slaterDownDeterminant = det(slaterDown);
-    updateLaplace(r);
-    //updateAll(r);
-
+    allNewPosUpdate(r);
 }
 
 
@@ -100,8 +92,7 @@ void SlaterDeterminant::allNewPosUpdate(const mat &r){
 
 void SlaterDeterminant::updateAll(const mat &r, int i){
     updateMatrix(r);
-    //slaterUp.print("swags");
-    //cout << "yolo" << endl;
+
     updateDeterminant(r,i);
     updateInverse(r,i);
     updateLaplace(r);
@@ -113,7 +104,6 @@ void SlaterDeterminant::updateMatrix(const mat &r){
     for(int i=0; i<nParticles/2; i++){
         for(int j=0; j<nParticles/2; j++){
             slaterUp(i,j) = orbitals[2*i]->waveFunction(r.row(j));
-            //r.row(j).print("swag");
             slaterDown(i,j) = orbitals[2*i+1]->waveFunction(r.row(nParticles/2 + j));
         }
     }
@@ -124,7 +114,6 @@ void SlaterDeterminant::updateInverse(const mat &, int i){
     mat newSlaterUpInverse = zeros<mat>(nParticles/2,nParticles/2);
     mat newSlaterDownInverse = zeros<mat>(nParticles/2,nParticles/2);
     double sum;
-    //cout << ratioUp << endl;
     if(i<nParticles/2){
         for(int j=0; j<nParticles/2; j++){
             sum = 0;
@@ -175,11 +164,6 @@ void SlaterDeterminant::updateInverse(const mat &, int i){
         slaterDownInverse = newSlaterDownInverse;
     }
 
-    //cout << "inv" << endl;
-    //slaterUp.print();
-    //slaterUpInverse = inv(slaterUp);
-    //cout << "inv" << endl;
-    //slaterDownInverse = inv(slaterDown);
 }
 
 void SlaterDeterminant::updateDeterminant(const mat &r, int i){
@@ -199,8 +183,7 @@ void SlaterDeterminant::updateDeterminant(const mat &r, int i){
         slaterDownDeterminant = ratioDown*slaterDownDeterminant;
     }
 
-//    slaterUpDeterminant = det(slaterUp);
-//    slaterDownDeterminant = det(slaterDown);
+
 }
 
 void SlaterDeterminant::updateLaplace(const mat &r){
@@ -216,7 +199,7 @@ void SlaterDeterminant::updateLaplace(const mat &r){
 
         }
     }
-
+    //old (numerical) implementation
 //    mat rPlus = zeros<mat>(nParticles, nDimensions);
 //    mat rMinus = zeros<mat>(nParticles, nDimensions);
 
@@ -249,24 +232,18 @@ void SlaterDeterminant::updateLaplace(const mat &r){
 
 
 double SlaterDeterminant::waveFunction(const mat &r){
-    //rupdateMatrix(r);
-    //updateInverse(r);
-    //updateDeterminant(r);
     double ret;
     if(includePrecomputed){
         ret =  slaterUpDeterminant*slaterDownDeterminant;
     }
     else{
         ret = getDeterminant(r);
-        //cout << "lol" << endl;
 
     }
     return ret;
 }
 
 vec SlaterDeterminant::gradient(const mat &r, int i){
-    //returns grad(D)/D
-    //updateAll(r,i);
     slaterDownGradient = zeros(nDimensions);
     slaterUpGradient = zeros(nDimensions);
 
@@ -308,19 +285,8 @@ vec SlaterDeterminant::gradient(const mat &r, int i){
 }
 
 double SlaterDeterminant::laplace(const mat &r){
-    //updateAll(r);
+    // only returns the laplacian (does not update)
     double ret = 0;
-//    for(int i=0; i<nParticles;i++){
-//        ret += dot(gradient(slaterUp, i), gradient(slaterDown,i));
-//    }
-//    ret = 2*ret;
-//    r.print("r");
-//    slaterUp.print("up");
-//    slaterUpInverse.print("upinv");
-//    slaterDownInverse.print("downinv");
-//    slaterDown.print("down");
-
-//    cout << slaterUpLaplace << " " << slaterDownLaplace << " " << slaterUpDeterminant << endl;
     ret = slaterUpLaplace + slaterDownLaplace;
     return ret;
 }
@@ -330,7 +296,6 @@ double SlaterDeterminant::dPsidAlpha(const mat &r){
     for(int i=0; i<nParticles/2;i++){
         for(int j=0; j<nParticles/2; j++){
             dPhidAlphaUp(i,j) = orbitals[2*i]->dPhidAlpha(r.row(j));
-            //r.row(j).print("swag");
             dPhidAlphaDown(i,j) = orbitals[2*i+1]->dPhidAlpha(r.row(nParticles/2 + j));
         }
     }
@@ -352,7 +317,6 @@ double SlaterDeterminant::d2PsidAlpha2(const mat &r){
     for(int i=0; i<nParticles/2;i++){
         for(int j=0; j<nParticles/2; j++){
             d2PhidAlpha2Up(i,j) = orbitals[2*i]->d2PhidAlpha2(r.row(j));
-            //r.row(j).print("swag");
             d2PhidAlpha2Down(i,j) = orbitals[2*i+1]->d2PhidAlpha2(r.row(nParticles/2 + j));
         }
     }

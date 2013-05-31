@@ -1,5 +1,5 @@
 %\documentclass[prc,aps,preprint,floatfix]{revtex4}
-\documentclass[aps,prc,twocolumn,floatfix]{revtex4}
+\documentclass[aps,prc,floatfix]{revtex4}
 %\usepackage[dvips]{graphicx}
 %\usepackage{epsfig}
 % \usepackage{pst-plot}
@@ -602,7 +602,7 @@ We note that even though minimization over $\alpha$ only, without including the 
 	\includegraphics[width=6cm]{figures/densities/Hexyz.png}
 	\label{fig:subfig64}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of He. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of He. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization. Note that only the one-body density is normalized, the other plots show the non-normalized distribution.}
 \label{fig:6}
 \end{figure}
 
@@ -623,7 +623,7 @@ We note that even though minimization over $\alpha$ only, without including the 
 	\includegraphics[width=6cm]{figures/densities/Bexyz.png}
 	\label{fig:subfig74}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of Be. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of Be. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization. Note that only the one-body density is normalized, the other plots show the non-normalized distribution.}
 \label{fig:7}
 \end{figure}
 
@@ -644,7 +644,7 @@ We note that even though minimization over $\alpha$ only, without including the 
 	\includegraphics[width=6cm]{figures/densities/Nexyz.png}
 	\label{fig:subfig84}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of Ne. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of Ne. The radial distribution shows pure hydrogenic orbitals, optimization over $\alpha$ only, optimization over $\beta$ only, and complete optimization. The rest show only the complete optimization. Note that only the one-body density is normalized, the other plots show the non-normalized distribution.}
 \label{fig:8}
 \end{figure}
 
@@ -666,7 +666,7 @@ We note that even though minimization over $\alpha$ only, without including the 
 	\includegraphics[width=6cm]{figures/densities/H2xyz.png}
 	\label{fig:subfig94}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of the symmetric solution for $\text{H}_2$.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of the symmetric solution for $\text{H}_2$. None of the distributions are normalized}
 \label{fig:11}
 \end{figure}
 
@@ -687,7 +687,7 @@ We note that even though minimization over $\alpha$ only, without including the 
 	\includegraphics[width=6cm]{figures/densities/H2mxyz.png}
 	\label{fig:subfig114}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of the anti-symmetric solution for $\text{H}_2$.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of the anti-symmetric solution for $\text{H}_2$. None of the distributions are normalized}
 \label{fig:9}
 \end{figure}
 
@@ -708,7 +708,7 @@ We note that even though minimization over $\alpha$ only, without including the 
 	\includegraphics[width=6cm]{figures/densities/Be2xyz.png}
 	\label{fig:subfig104}
 }
-\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of $\text{Be}_2$.}
+\caption[Optional caption for list of figures]{The figures show various projections of the non-normalized one-body density of $\text{Be}_2$. None of the distributions are normalized.}
 \label{fig:10}
 \end{figure}
 \clearpage
@@ -928,9 +928,10 @@ Which gives
 \end{equation}
 The next steo consists in choosing an acceptance which fulfills the previous equation. One common choice, and the one we use, is given by 
 \begin{equation}
-\min \left( 1, {P(x')g(x'\rightarrow x) \over P(x)g(x\rightarrow x')} \right)
+\min \left( 1, {P(x')g(x'\rightarrow x) \over P(x)g(x\rightarrow x')} \right).
 \end{equation}
  
+ To a point, we can start many walkers, let them move according to the markov chain for a while, and they should eventually obey the probability distribution. If we also have ergodicity, then we can simply sample the position of a single walker, as this should obey the probability distribution as well. 
 \end{appendices}
 
 

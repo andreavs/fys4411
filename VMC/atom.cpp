@@ -32,7 +32,7 @@ void Atom::constructor(string atomType){
         setParametersBe2();
     }
     else{
-        cout << "Invalid atom; accepted ones are He, Be and Ne! Exiting.." << endl;
+        cout << "Invalid atom; accepted ones are He, Be, Ne, H2, Be2! Exiting.." << endl;
         exit(0);
     }
 }
@@ -81,7 +81,5 @@ void Atom::setParametersBe2(){
     charge = 4;
     optimalAlpha = 3.91;
     optimalBeta = 0.25;
-    // E = -19.41(2);
-    // 4.63 // 2.46
     R << 4.63 << 0 << 0;
 }

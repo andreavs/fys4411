@@ -1,5 +1,5 @@
 %\documentclass[prc,aps,preprint,floatfix]{revtex4}
-\documentclass[aps,prc,twocolumn,floatfix]{revtex4}
+\documentclass[aps,prc,floatfix]{revtex4}
 %\usepackage[dvips]{graphicx}
 %\usepackage{epsfig}
 % \usepackage{pst-plot}
@@ -916,12 +916,22 @@ Finally, it can be shown (but this is more complicated) that
  \end{equation}
  which can be rewritten as 
  \begin{equation}
-  {P(x\rightarrow x') \over P(x'\rightarrow x)}
+  {P(x\rightarrow x') \over P(x'\rightarrow x)} = {P(x') \over P(x)}
  \end{equation}
-
-
-
+A common approach is to separate the transition in two sub-steps: the proposal and the acceptance-refusal. The proposal distribution $g(x\rightarrow x')$ is the conditional probability of proposing a state $x'$ given $x$, and the acceptance distribution $A(x\rightarrow x')$ the conditional probability to accept the proposed state $x'$ given $x$. We have then that 
+\begin{equation}
+ P(x\rightarrow x') = g(x\rightarrow x') A(x\rightarrow x').
+\end{equation}
+Which gives 
+\begin{equation}
+ {A(x\rightarrow x') \over A(x' \rightarrow x)} = {P(x')g(x'\rightarrow x) \over P(x)g(x \rightarrow x')}.
+\end{equation}
+The next steo consists in choosing an acceptance which fulfills the previous equation. One common choice, and the one we use, is given by 
+\begin{equation}
+\min \left( 1, {P(x')g(x'\rightarrow x) \over P(x)g(x\rightarrow x')} \right).
+\end{equation}
  
+ To a point, we can start many walkers, let them move according to the markov chain for a while, and they should eventually obey the probability distribution. If we also have ergodicity, then we can simply sample the position of a single walker, as this should obey the probability distribution as well. 
 \end{appendices}
 
 

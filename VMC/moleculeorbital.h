@@ -20,12 +20,6 @@ public:
 
 
 private:
-//    double alpha;
-//    int nDimensions;
-//    int nParticles;
-//    int n;
-//    int l;
-//    int m;
     vec3 R;
 
 

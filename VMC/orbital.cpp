@@ -32,7 +32,6 @@ double Orbital::waveFunction(const vec &r){
             //cout << r(m+1) << endl;
 
             ret = r(m+1)*alpha*exp(-alpha*r1/2);
-            //cout << "balle " << ret << endl;
 
         }
     }

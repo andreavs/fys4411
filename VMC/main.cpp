@@ -45,33 +45,36 @@ int main(int nargs, char* args[])
     atomType = "H2"; alpha = 1.29; beta = 0.39;
     int N = 30;
     newSim = new VMCSetup(1e7,atomType);
-    //newSim->atom->R(0) = 1.34;
-    //newSim->runSingleSimulation(alpha, beta, incJas, incSelf, incPreComp, true, true, true);
+    newSim->atom->R(0) = 1.34;
+    newSim->runSingleSimulation(alpha, beta, incJas, incSelf, incPreComp, true, true, true);
 //    if(my_rank == 0){
 //        newSim->runSteepestDescent(2.0,0.5,100,1,1e5,true,true,true);
 //    }
-    vec Rvals = linspace(0.1,2.5,N);
-    double e;
-    vec avec = zeros(N);
-    vec bvec = zeros(N);
-    vec evals = zeros(N);
-    vec params = zeros(2);
-    if(my_rank==0){
-        for(int i=0; i<N;i++){
-            newSim->atom->R(0) = Rvals(i);
-            params = newSim->runSteepestDescent(2.0,0.5,50,1,1e5,true,true,true);
-            alpha = params(0);
-            avec(i) = alpha;
-            beta = params(1);
-            bvec(i) = beta;
-            evals(i) = newSim->runSingleSimulation(alpha, beta, incJas, incSelf, incPreComp, true, true, true);
-        }
 
-        Rvals.print("R;");
-        evals.print("E:");
-        avec.print("alpha:");
-        bvec.print("beta:");
-    }
+
+    //example of how to find optimal parameters for a set of R values:
+//    vec Rvals = linspace(0.1,2.5,N);
+//    double e;
+//    vec avec = zeros(N);
+//    vec bvec = zeros(N);
+//    vec evals = zeros(N);
+//    vec params = zeros(2);
+//    if(my_rank==0){
+//        for(int i=0; i<N;i++){
+//            newSim->atom->R(0) = Rvals(i);
+//            params = newSim->runSteepestDescent(2.0,0.5,50,1,1e5,true,true,true);
+//            alpha = params(0);
+//            avec(i) = alpha;
+//            beta = params(1);
+//            bvec(i) = beta;
+//            evals(i) = newSim->runSingleSimulation(alpha, beta, incJas, incSelf, incPreComp, true, true, true);
+//        }
+
+//        Rvals.print("R;");
+//        evals.print("E:");
+//        avec.print("alpha:");
+//        bvec.print("beta:");
+//    }
 
 
 
@@ -86,42 +89,7 @@ int main(int nargs, char* args[])
 //    wave->oneBodyDensity3D("test", 2, 50, 1e4);
 
 
-
-
-//    cout << "Ne" << endl;
-//    atomType = "Ne"; alpha = 10.0; beta = 0.104;
-//    newSim = new VMCSetup(1e6,atomType);
-////        if(my_rank == 0){
-////            newSim->runSteepestDescent(10.0,0.4,100,1,1e5,true,true,true);
-////        }
-//    newSim->runSingleSimulation(alpha, beta, true, incSelf, incPreComp, true, true, true);
-//    myAtom = new Atom(atomType);
-//    wave = new WaveFunction(myAtom, true, true, true, alpha, beta);
-//    wave->oneBodyDensity2D("test", 2, 50, 1e4);
-//    wave->oneBodyDensity3D("test", 2, 50, 1e4);
-
-
-
-
-    //newSim->runSteepestDescent(3,0.4,100,1,1e5,true, true, true);
-
-
-
-//    Atom *atom = new Atom(atomType);
-//    WaveFunction *wave = new WaveFunction(atom, true, true, true, alpha, beta);
-//    wave->oneBodyDensity1D("test", 2, 200, 1e6,0);
-//    wave->oneBodyDensity1D("test", 2, 200, 1e6,1);
-
-
-
-
-    //newSim->runSteepestDescent(3,0.4,100,1,1e5,true, true, true);
-
-//    atomType = "H2"; alpha = 1,29; beta = 0.39;
-//    VMCSetup *newSim = new VMCSetup(1e5,atomType);
-//    newSim->runSingleSimulation(alpha, beta, incJas, incSelf, incPreComp, true,true);
-
-
+    //run blocking on the results:
 
 
     if(my_rank == 0){
@@ -134,10 +102,6 @@ int main(int nargs, char* args[])
         system(pythonPath.c_str());
 }
 
-
-//    srand(1);
-//    vec vec1 = randu(2);
-//    vec1.print("1");
 
     MPI_Finalize();
 

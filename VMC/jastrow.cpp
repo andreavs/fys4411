@@ -45,6 +45,7 @@ vec Jastrow::gradient(const mat &r, int row){
         }
     }
 
+    // numerical (old) implementation:
 //    double h = 1e-8;
 //    mat rPlus = zeros<mat>(nParticles, nDimensions);
 //    mat rMinus = zeros<mat>(nParticles, nDimensions);
@@ -75,6 +76,7 @@ double Jastrow::laplace(const mat &r){
     double sum = 0;
 
 
+    // numerical (old) implementation:
 //    mat rPlus = zeros<mat>(nParticles, nDimensions);
 //    mat rMinus = zeros<mat>(nParticles, nDimensions);
 
@@ -109,7 +111,6 @@ double Jastrow::laplace(const mat &r){
             if(i != k){
                 if((i+k)%2 == 1){aik = 0.5;}
                 else{aik = 0.25;}
-                //rik = r.row(i) - r.row(k);
                 rik.at(0) = r.at(i,0) - r.at(k,0); rik.at(1) = r.at(i,1) - r.at(k,1); rik.at(2) = r.at(i,2) - r.at(k,2);
                 rikn = sqrt(rik.at(0)*rik.at(0) + rik.at(1)*rik.at(1) + rik.at(2)*rik.at(2));
                 sum += (nDimensions-1)/rikn*aik/((1+beta*rikn)*(1+beta*rikn));
@@ -118,32 +119,7 @@ double Jastrow::laplace(const mat &r){
         }
     }
 
-//    double aij;
-//    vec rij;
-//    for(int i=0; i<nParticles;i++){
-//        for(int j=0; j<nParticles;j++){
-//            if(j != i){
-//                if((j+i)%2 == 1){aij = 0.5;}
-//                else{aij = 0.25;}
-//                rij = r.row(i) - r.row(j);
-//                rijn = sqrt((r(i,0) - r(j,0))*(r(i,0) - r(j,0)) + (r(i,1) - r(j,1))*(r(i,1) - r(j,1)) + (r(i,2) - r(j,2))*(r(i,2) - r(j,2)));
 
-//                for(int k = 0; k<nParticles;k++){
-//                    if(k != j && k != i){
-//                        if((j+k)%2 == 1){aik = 0.5;}
-//                        else{aik = 0.25;}
-//                        rik = r.row(i) - r.row(k);
-//                        rikn = sqrt(rik(0)*rik(0) + rik(1)*rik(1) + rik(2)*rik(2));
-//                        partsum += aik*dot(rik, rij)/(rikn*rijn*(beta*rikn +1)*(beta*rikn +1));
-//                    }
-//                }
-//                partsum = 2*partsum;
-
-//                sum += aij/((beta*rijn + 1)*(beta*rijn + 1))*(partsum + aij/(((beta*rijn + 1)*(beta*rijn + 1))) + 2/(rijn*(beta*rijn + 1)));
-//                partsum = 0.0;
-//            }
-//        }
-//    }
 
     return sum;
 }
